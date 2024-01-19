@@ -1,0 +1,533 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    background-image: linear-gradient(150deg, #ccd3ec, #e5eaf5);
+    background-repeat: no-repeat;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 8%;
+    background-color: rgb(61, 97, 197);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+
+.logo {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+
+}
+
+.navbar a {
+    display: inline-block;
+    position: sticky;
+    color: #222;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 20px;
+    transition: .3s;
+    font-weight: 550;
+    font-size: 18px;
+    opacity: 0;
+    animation: SlideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: white;
+}
+
+.social-medias {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    height: 40px;
+
+}
+
+.social-medias a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    text-decoration: none;
+    transform: rotate(45deg);
+    transition: .5s;
+    opacity: 0;
+    animation: SlideSci .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+
+}
+
+.social-medias a:hover {
+    border-color: white;
+
+}
+
+.social-medias a i {
+    font-size: 24px;
+    color: white;
+    transform: rotate(-45deg);
+
+}
+
+.home {
+    position: relative;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 8% 0;
+    overflow: hidden;
+
+}
+
+
+.home-content {
+
+    max-width: 630px;
+}
+
+.home-content h1 {
+    font-size: 50px;
+    line-height: 1.2;
+    opacity: 0;
+    animation: SlideBottom 1s ease forwards;
+    animation-delay: .6s;
+    color: black;
+
+}
+
+.home-content h3 {
+    font-size: 40px;
+    color: rgb(61, 97, 197);
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 21px;
+    margin: 15px 0 30px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.3s;
+    color: black;
+}
+
+.service-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: rgb(61, 97, 197);
+    border: 2px solid blue(189, 36, 25);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    font-size: 16px;
+    color: white;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .5s;
+    opacity: 0;
+    animation: SlideTop 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.service-btn:hover {
+    background: transparent;
+    color: black;
+}
+
+.home-img {
+    position: relative;
+    right: -7%;
+    width: 450px;
+    height: 450px;
+    transform: rotate(45deg);
+}
+
+.home-img .rhombus {
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    background: rgb(61, 97, 197);
+    /* border: 25px solid white; */
+    border-radius: 250px;
+    box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+    opacity: 0;
+    animation: zoomOut 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.home-img .rhombus img {
+    position: absolute;
+    top: 110px;
+    left: -250px;
+    max-width: 750px;
+    transform: rotate(-45deg);
+    opacity: 0;
+    animation: car 1s ease forwards;
+    animation-delay: 1.9s;
+}
+
+.home .rhombus2 {
+    position: absolute;
+    top: -25%;
+    right: -25%;
+    width: 700px;
+    height: 700px;
+    background: rgb(61, 97, 197);
+    border-radius: 500px;
+    transform: rotate(45deg);
+    z-index: -1;
+    box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+    animation: slideLeft 1s ease forwards;
+
+
+}
+
+/* .home{
+    background-image: linear-gradient(150deg, rgb(216, 219, 48), white);
+} */
+
+
+/* KEYFRAMES ANIMATION */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes SlideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes SlideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes SlideSci {
+    0% {
+        transform: translateX(100px) rotate(45deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0) rotate(45deg);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes car {
+    0% {
+        transform: translate(300px, -300px) scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1) rotate(-45deg);
+        opacity: 1;
+    }
+}
+
+@keyframes rhombus2 {
+    0% {
+        right: -40%;
+        opacity: 0;
+    }
+
+    100% {
+        right: -40%;
+        opacity: 1;
+    }
+}
+
+
+@media screen and (max-width: 1431px) {
+    .home-img {
+        position: relative;
+        right: -7%;
+        width: 450px;
+        height: 450px;
+        transform: rotate(45deg);
+        display: none;
+    }
+
+    .home-img .rhombus {
+        position: absolute;
+        width: 100%;
+        height: 140%;
+        background: rgb(61, 97, 197);
+        /* border: 25px solid white; */
+        border-radius: 250px;
+        box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+        opacity: 0;
+        animation: zoomOut 1s ease forwards;
+        animation-delay: 1.6s;
+        display: none;
+    }
+
+    .home-img .rhombus img {
+        position: absolute;
+        top: 110px;
+        left: -250px;
+        max-width: 750px;
+        transform: rotate(-45deg);
+        opacity: 0;
+        animation: car 1s ease forwards;
+        animation-delay: 1.9s;
+        display: none;
+    }
+
+    .home .rhombus2 {
+        position: absolute;
+        top: -25%;
+        right: -25%;
+        width: 700px;
+        height: 700px;
+        background: rgb(61, 97, 197);
+        border-radius: 500px;
+        transform: rotate(45deg);
+        z-index: -1;
+        box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+        animation: slideLeft 1s ease forwards;
+        display: none;
+
+
+    }
+
+
+}
+
+@media screen and (max-width: 1062px) {
+    .home-img {
+        position: relative;
+        right: -7%;
+        width: 450px;
+        height: 450px;
+        transform: rotate(45deg);
+        display: none;
+    }
+
+    .home-img .rhombus {
+        position: absolute;
+        width: 100%;
+        height: 140%;
+        background: rgb(61, 97, 197);
+        /* border: 25px solid white; */
+        border-radius: 250px;
+        box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+        opacity: 0;
+        animation: zoomOut 1s ease forwards;
+        animation-delay: 1.6s;
+        display: none;
+    }
+
+    .home-img .rhombus img {
+        position: absolute;
+        top: 110px;
+        left: -250px;
+        max-width: 750px;
+        transform: rotate(-45deg);
+        opacity: 0;
+        animation: car 1s ease forwards;
+        animation-delay: 1.9s;
+        display: none;
+    }
+
+    .home .rhombus2 {
+        position: absolute;
+        top: -25%;
+        right: -25%;
+        width: 700px;
+        height: 700px;
+        background: rgb(61, 97, 197);
+        border-radius: 500px;
+        transform: rotate(45deg);
+        z-index: -1;
+        box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+        animation: slideLeft 1s ease forwards;
+        display: none;
+
+
+    }
+
+
+    .navbar a {
+        display: inline;
+        position: sticky;
+        font: 9px;
+        color: #222;
+        text-decoration: none;
+        font-weight: 300;
+        margin: 0 3px;
+        transition: .3s;
+     
+        opacity: 0;
+      
+
+
+
+    }
+
+    .social-media {
+        display: none;
+        justify-content: space-between;
+        width: 200px;
+        height: 40px;
+    
+    }
+
+
+}
+@media screen and (max-width: 601px) {
+    .home-img {
+        position: relative;
+        right: -7%;
+        width: 450px;
+        height: 450px;
+        transform: rotate(45deg);
+        display: none;
+    }
+
+    .home-img .rhombus {
+        position: absolute;
+        width: 100%;
+        height: 140%;
+        background: rgb(61, 97, 197);
+        /* border: 25px solid white; */
+        border-radius: 250px;
+        box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+        opacity: 0;
+        animation: zoomOut 1s ease forwards;
+        animation-delay: 1.6s;
+        display: none;
+    }
+
+    .home-img .rhombus img {
+        position: absolute;
+        top: 110px;
+        left: -250px;
+        max-width: 750px;
+        transform: rotate(-45deg);
+        opacity: 0;
+        animation: car 1s ease forwards;
+        animation-delay: 1.9s;
+        display: none;
+    }
+
+    .home .rhombus2 {
+        position: absolute;
+        top: -25%;
+        right: -25%;
+        width: 700px;
+        height: 700px;
+        background: rgb(61, 97, 197);
+        border-radius: 500px;
+        transform: rotate(45deg);
+        z-index: -1;
+        box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+        animation: slideLeft 1s ease forwards;
+        display: none;
+
+
+    }
+
+
+    .navbar a {
+        display: inline;
+        position: sticky;
+        font: 9px;
+        color: #222;
+        text-decoration: none;
+        font-weight: 300;
+        margin: 0 3px;
+        transition: .3s;
+        font-size: 12px;
+        opacity: 0;
+      
+
+
+
+    }
+
+    .social-medias {
+        display: none;
+        justify-content: space-between;
+        width: 200px;
+        height: 40px;
+    
+    }
+
+
+}
